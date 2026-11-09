@@ -18,3 +18,4 @@ Projekt analityczny badający korelację między zanieczyszczeniem powietrza (da
 
 ---
 *Uwaga: Pamiętajcie o pushowaniu zmian i gotowych plików `.png` przed niedzielą!*
+*Proszę o zapisywanie wykresów które mają znaleźć się na plakacie z dopiskiem “final”*
