@@ -52,4 +52,4 @@ wykres <- ggplot(mapa_sf) +
     legend.text = element_text(size = 13)
   )
 
-ggsave("mapa_polska_smog_astma_szata.png", plot = wykres, width = 10, height = 8, dpi = 300, bg = "white")
+ggsave("mapa_polska_smog_astma_szata2.png", plot = wykres, width = 10, height = 8, dpi = 300, bg = "white")
