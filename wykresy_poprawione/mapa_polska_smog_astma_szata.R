@@ -3,6 +3,8 @@ library(dplyr)
 library(ggplot2)
 library(sf)
 
+sf_use_s2(FALSE)
+
 dane_astma <- read_excel("Astma_aktualizacja_2023.xlsx", sheet = "Wykres 2.3", skip = 1) %>%
   select(nazwa = 1, astma = 2) %>%
   mutate(nazwa = tolower(nazwa), astma = as.numeric(astma)) %>%
@@ -42,8 +44,6 @@ wykres <- ggplot(mapa_sf) +
   ) +
   theme_void(base_size = 13) +
   theme(
-    plot.title = element_text(face = "bold", size = 15, hjust = 0.5, margin = margin(b = 5)),
-    plot.subtitle = element_text(size = 10, color = "gray30", hjust = 0.5, margin = margin(b = 15)),
     plot.background = element_rect(fill = "white", color = NA),
     panel.background = element_rect(fill = "white", color = NA),
     plot.margin = margin(20, 20, 20, 20),
@@ -52,4 +52,4 @@ wykres <- ggplot(mapa_sf) +
     legend.text = element_text(size = 13)
   )
 
-ggsave("mapa_polska_smog_astma_szata2.png", plot = wykres, width = 10, height = 8, dpi = 300, bg = "white")
+ggsave("mapa_polska_smog_astma_szata3.png", plot = wykres, width = 10, height = 8, dpi = 300, bg = "white")
