@@ -16,7 +16,7 @@ df_wynik <- inner_join(df_chor, df_hosp, by = "Kraj") %>%
 mnoznik <- 1.4
 
 ggplot(df_wynik, aes(x = reorder(Kraj, Chorobowosc))) +
-  geom_col(aes(y = Chorobowosc, fill = Kraj == "Polska"), alpha = 0.85) +
+  geom_col(aes(y = Chorobowosc, fill = Kraj == "Polska")) +
   geom_point(aes(y = Hospitalizacje * mnoznik), color = "darkred", size = 3.8) +
   coord_flip() +
   scale_fill_manual(values = c("FALSE" = "lightpink", "TRUE" = "palevioletred"))+
