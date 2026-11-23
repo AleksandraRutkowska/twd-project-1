@@ -13,7 +13,7 @@ dane_astma <- read_excel("Astma_aktualizacja_2023.xlsx", sheet = "Wykres 2.3", s
     astma_poziom = cut(
       astma, 
       breaks = 3, 
-      labels = c("Niski", "Średni", "Wysoki"),
+      labels = c("Niska", "Średnia", "Wysoka"),
       include.lowest = TRUE
     )
   )
@@ -43,13 +43,13 @@ wykres <- ggplot(mapa_sf) +
   geom_sf(aes(fill = dni_smogowe), color = "gray70", linewidth = 0.5) +
   geom_sf(data = st_centroid(mapa_sf), aes(color = astma_poziom), size = 8) +
   scale_fill_steps(
-    low = "#F9F9F9", high = "#1A1A1A", 
+    low = "#F5F5F5", high = "#1A1A1A", 
     n.breaks = 4,
     name = "Liczba dni z przekroczonym\nzanieczyszczeniem powietrza"
   ) +
   scale_color_manual(
-    values = c("Niski" = "#F8BBD0", "Średni" = "#C2185B", "Wysoki" = "#880E4F"),
-    name = "Przypadki astmy\nna 1 tys. mieszkańców"
+    values = c("Niska" = "#F8BBD0", "Średnia" = "#C2185B", "Wysoka" = "#880E4F"),
+    name = "Chorobowość na astmę"
   ) +
   theme_void(base_size = 13) +
   theme(
@@ -61,4 +61,4 @@ wykres <- ggplot(mapa_sf) +
     legend.text = element_text(size = 13)
   )
 
-ggsave("mapa_polska_smog_astma_final.png", plot = wykres, width = 10, height = 8, dpi = 300, bg = "white")
+ggsave("mapa_polska_smog_astma_finalfinal.png", plot = wykres, width = 10, height = 8, dpi = 300, bg = "white")
